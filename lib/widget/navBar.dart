@@ -22,7 +22,7 @@ AppBar NavBarPersonalise(String titre) {
               color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              fontFamily: "avenir"),
+              fontFamily: "arial"),
         )),
     iconTheme: IconThemeData(color: Colors.black),
     actions: [
