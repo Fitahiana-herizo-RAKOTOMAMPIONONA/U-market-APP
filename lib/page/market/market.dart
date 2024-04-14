@@ -21,7 +21,7 @@ class _MarketPageState extends State<MarketPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: NavBarPersonalise(widget.title),
-      
+      body: SingleChildScrollView(),
       bottomNavigationBar: AppBArBottomPersonalise(),
     );
   }
