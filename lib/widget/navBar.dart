@@ -8,7 +8,7 @@ AppBar NavBarPersonalise(String titre) {
     elevation: 0,
     centerTitle: true,
     leading: () {
-      if (titre == "U-market") {
+      if (titre == "SportMarket") {
         return Icon(Icons.add_alarm_rounded);
       }
     }(),
@@ -18,11 +18,11 @@ AppBar NavBarPersonalise(String titre) {
         alignment: Alignment.center,
         child: Text(
           titre,
-          style: TextStyle(
+          style:  const TextStyle(
               color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              fontFamily: "arial"),
+          ),
         )),
     iconTheme: IconThemeData(color: Colors.black),
     actions: [

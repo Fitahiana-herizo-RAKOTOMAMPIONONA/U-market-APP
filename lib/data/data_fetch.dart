@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xxx/model/model.dart';
 
 final List<String> imgList = [
   '/assets/image/jordan1.jpeg',
@@ -50,24 +51,22 @@ final List<Widget> imageSliders = imgList
         ))
     .toList();
 
-final List<String> recomendedList = [
-  '/assets/image/jordan4.jpeg',
-  '/assets/image/jordan1.jpeg',
-  '/assets/image/memphis.jpeg',
-  '/assets/image/acmilan.jpeg',
-  '/assets/image/adidas.jpeg',
-  '/assets/image/nemezis.jpeg',
-  '/assets/image/bras.jpeg',
-];
-final List<Widget> recomendedSliders = recomendedList
-    .map((item) => Container(
-          child: Container(
+class CarousselHero extends StatelessWidget {
+  
+  final Category category;
+  const CarousselHero({
+    required this.category
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
             margin: const EdgeInsets.all(5.0),
             child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(5.0)),
                 child: Stack(
                   children: <Widget>[
-                    Image.network(item, fit: BoxFit.cover, width: 1000.0),
+                    Image.network(category.imageURL, fit: BoxFit.cover, width: 1000.0),
                     Positioned(
                       bottom: 0.0,
                       left: 0.0,
@@ -86,7 +85,7 @@ final List<Widget> recomendedSliders = recomendedList
                         padding: const EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
                         child: Text(
-                          'No. ${imgList.indexOf(item)} image',
+                          category.name,
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 20.0,
@@ -97,10 +96,9 @@ final List<Widget> recomendedSliders = recomendedList
                     ),
                   ],
                 )),
-          ),
-        ))
-    .toList();
-
+          );
+  }
+}
 
 final List<String> packList = [
   '/assets/image/class3.jpeg',

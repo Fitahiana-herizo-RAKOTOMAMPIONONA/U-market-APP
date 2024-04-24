@@ -12,12 +12,13 @@ class PersonPage extends StatefulWidget {
               title: "Person",
             ));
   }
-
+  
   @override
   State<PersonPage> createState() => _PersonPageState();
 }
 
 class _PersonPageState extends State<PersonPage> {
+  TextEditingController _nom =TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +38,15 @@ class _PersonPageState extends State<PersonPage> {
             Positioned(
               left: 02,
               child: Text("Zo")
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TextField(
+              controller: _nom,
+              decoration: InputDecoration(
+                labelText: "votre Nom",
+              ),
             ),
           ],
         ),

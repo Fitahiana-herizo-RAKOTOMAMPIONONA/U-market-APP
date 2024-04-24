@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:xxx/model/model.dart';
 import '../../data/data.dart';
 import '../../widget/widget.dart';
 
@@ -13,8 +14,8 @@ class MyHomePage extends StatefulWidget {
         settings: const RouteSettings(name: routeName),
         builder: (_) => const MyHomePage(
               title: "SportMarket",
-            ));
-  }
+        )); 
+  } 
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -38,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   autoPlay: true,
                   enlargeStrategy: CenterPageEnlargeStrategy.height,
                   viewportFraction: .85),
-              items: recomendedSliders ,
+              items: Category.imageSliders.map((e) => CarousselHero(category: e)).toList() ,
             )),
             titreWidget(
               titre: 'RECOMMENDED',
